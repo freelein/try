@@ -1,0 +1,205 @@
+/* カスタムCSS - 追加のスタイル定義 */
+
+/* 全体的なテーマカラー */
+:root {
+    --primary-color: #4ecdc4;
+    --secondary-color: #ff6b6b;
+    --accent-color: #45b7d1;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+}
+
+/* ボディのベーススタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* ヘッダーエリアの強化 */
+#header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ブログタイトルのスタイル */
+#blogTitle h1 {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5em;
+    margin: 0;
+    text-align: center;
+}
+
+#blogTitle h2 {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* ナビゲーションの強化 */
+#navList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#navList li {
+    margin: 0 15px;
+}
+
+#navList a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+#navList a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 記事カードのスタイル */
+.day {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.dayTitle {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 15px 25px;
+    font-weight: bold;
+}
+
+.postTitle {
+    padding: 20px 25px 10px;
+}
+
+.postTitle a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.postTitle a:hover {
+    color: var(--primary-color);
+}
+
+.postCon {
+    padding: 0 25px 15px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.postDesc {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* サイドバーの強化 */
+#sideBar {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+}
+
+.newsItem h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    #blogTitle h1 {
+        font-size: 2em;
+    }
+    
+    #navList {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #navList li {
+        margin: 5px 0;
+    }
+    
+    .day {
+        margin: 15px 10px;
+    }
+    
+    #header {
+        margin: 10px;
+        padding: 20px;
+    }
+}
+
+/* アニメーション効果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.day {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
