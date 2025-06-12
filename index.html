@@ -6,38 +6,39 @@
     <meta name="referrer" content="origin-when-cross-origin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>iMikufans Club Blogs - 未来へ響く最初の音</title>
-    <!-- ★ faviconは後で自分のものに変更してください -->
     <link rel="icon" id="favicon" href="https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg" type="image/x-icon" />
     <link rel="canonical" href="https://freelein.github.io/try/" />
     
-    <!-- ローカルファイルへのパス -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/blog-common.min.css" />
     <link type="text/css" rel="stylesheet" href="css/custom.css" />
     <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="css/mobile-common.min.css" />
-    
-    <!-- 外部CDNのフォントファイル -->
     <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/css/fonts/CascadiaMono-SemiLight.min.css" />
+    <link rel="stylesheet" href="css/OwO.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css"/>
 
-    <!-- 静的サイト用に一部の変数を調整 -->
+    <!-- ★★★ CORE JAVASCRIPT LIBRARIES ★★★ -->
+    <!-- ★ 最初にjQueryを読み込むことが非常に重要 ★ -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/blog-common.min.js"></script>
+
     <script>
+        // 静的サイト用の設定
         var currentBlogId = 800796;
         var currentBlogApp = 'syskuku';
         var isLogined = false;
         var isBlogOwner = false;
         var skinName = 'Custom';
     </script>
-    <!-- ローカルファイルへのパス -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/blog-common.min.js"></script>
 </head>
 
 <body class="skin-custom no-navbar">
     <a name="top"></a>
     
-    <!-- トップナビゲーション (内容はサンプルです) -->
-    <div id="top_nav" class="navbar forpc navbar-custom">
-        <!-- ナビゲーションバーのHTMLは多すぎるため省略しますが、元のコードからそのままコピーして問題ありません -->
-    </div>
+    <!-- トップナビゲーションは省略 -->
+    <div id="top_nav" class="navbar forpc navbar-custom"></div>
 
     <!-- 追従ボタンやエフェクト用のHTML -->
     <div id="page_begin_html">
@@ -45,91 +46,38 @@
             <div class="set_btn fly_top fadeIn animated">
                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhiding"></use></svg>
             </div>
-            <!-- 他のボタン類... -->
+            <div class="set_btn article_icon_btn catalogue_btn"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-dagang"></use></svg></div>
+            <div class="set_btn article_icon_btn comment"><a href="#comment_form_container"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-linedesign-01"></use></svg></a></div>
+            <div class="set_btn skin_btn"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-pifu"></use></svg></div>
+            <div class="set_btn gratuity"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-dashang"></use></svg></div>
+            <div class="set_btn article_icon_btn artice_recommend"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-tuijian2"></use></svg></div>
+            <canvas id="thumsCanvas" width="200" height="400" style="width:100px;height:200px"></canvas>
+            <div class="set_btn catalogue"><svg class="icon" aria-hidden="true" style="color:#97A1A7"><use xlink:href="#icon-cebianlan-"></use></svg></div>
         </div>
-        <!-- ローカルファイルへのパス -->
         <script src='js/canvas2.js'></script>
     </div>
 
     <div id="home">
         <div id="header">
             <div id="blogTitle">
-                <!-- ヘッダーのリンクをあなたのサイトURLに変更 -->
                 <a id="lnkBlogLogo" href="https://freelein.github.io/try/"><img id="blogLogo" src="https://www.cnblogs.com/skins/custom/images/logo.gif" alt="ホームへ戻る" /></a>		
                 <h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://freelein.github.io/try/">iMikufans Club Blogs</a></h1>
                 <h2>未来へ響く、最初の音</h2>
             </div>
             <div id="navigator">
                 <ul id="navList">
-                    <!-- ナビゲーションメニュー (日本語化) -->
-                    <li><a class="menu" href="#">ホーム</a></li>
-                    <li><a class="menu" href="#">新しい記事</a></li>
-                    <li><a class="menu" href="#">コンタクト</a></li>
-                    <li><a class="menu" href="#">購読</a></li>
-                    <li><a class="menu" href="#">管理</a></li>
+                    <li><a class="menu" href="#">ホーム</a></li><li><a class="menu" href="#">新しい記事</a></li><li><a class="menu" href="#">コンタクト</a></li><li><a class="menu" href="#">購読</a></li><li><a class="menu" href="#">管理</a></li>
                 </ul>
-                <div class="blogStats">
-                    <!-- 統計情報は静的に書き込み (日本語化) -->
-                    <div id="blog_stats">
-                        <span>記事 - 3</span> <span>随筆 - 0</span> <span>コメント - 7</span> <span>閲覧数 - 27080</span>
-                    </div>
-                </div>
+                <div class="blogStats"><div id="blog_stats"><span>記事 - 3</span> <span>随筆 - 0</span> <span>コメント - 7</span> <span>閲覧数 - 27080</span></div></div>
             </div>
         </div>
         <div id="main">
             <div id="mainContent">
                 <div class="forFlow">
-                    <!-- 記事１ -->
-                    <div class="day">
-                        <div class="dayTitle"><a>2023年12月30日</a></div>
-                        <div class="postTitle">
-                            <a class="postTitle2 vertical-middle" href="#">
-                                <span>VOCALOID総合ライブラリダウンロードサイト (V2, V3, V4, V5, V6対応)</span>
-                            </a>
-                        </div>
-                        <div class="postCon">
-                            <div class="c_b_p_desc">概要：このサイトでは、VOCALOIDの各バージョンの音声ライブラリを簡単にダウンロードできます。 #1 エディタダウンロード...</div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="postDesc">投稿日時: 2023-12-30 22:50 by SYSKUKU-自傷無色。
-                            <span>閲覧(19684)</span> <span>コメント(6)</span> <span>推薦(0)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <!-- 記事２ -->
-                    <div class="day">
-                        <div class="dayTitle"><a>2023年8月27日</a></div>
-                        <div class="postTitle">
-                            <a class="postTitle2 vertical-middle" href="#">
-                                <span>【V4配布】VOCALOID 4.5.2 V4 Plus Alphaエディタ (V5ライブラリ対応)</span>
-                            </a>
-                        </div>
-                        <div class="postCon">
-                            <div class="c_b_p_desc">概要： <img src="https://img2023.cnblogs.com/blog/3264725/202308/3264725-20230827145811990-1793599227.png" alt="" style="margin-right: 10px; max-width: 100px;" /> V5ライブラリをサポートするVocaloid 4！BPM Analyzer/Wave Track Transcoderを同梱。正規版の購入を推奨します... <a href="#" class="c_b_p_desc_readmore">続きを読む</a></div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="postDesc">投稿日時: 2023-08-27 14:58 by SYSKUKU-自傷無色。
-                            <span>閲覧(1501)</span> <span>コメント(0)</span> <span>推薦(0)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <!-- 記事３ -->
-                    <div class="day">
-                         <div class="dayTitle"><a>2023年8月23日</a></div>
-                         <div class="postTitle">
-                            <a class="postTitle2 vertical-middle" href="#">
-                                <span>新サイト「VOCAKEY」完成！Live2D、ダークモード対応</span>
-                            </a>
-                        </div>
-                        <div class="postCon">
-                            <div class="c_b_p_desc">概要：VOCAKEY新サイトが完成しました。編集機能、ダークモード、管理画面、Live2Dなどに対応。新サイトのリンクはこちら...</div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="postDesc">投稿日時: 2023-08-23 15:35 by SYSKUKU-自傷無色。
-                            <span>閲覧(7895)</span> <span>コメント(1)</span> <span>推薦(0)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                    <!-- 記事のHTMLは変更なしなので省略 -->
+                    <div class="day"><div class="dayTitle"><a>2023年12月30日</a></div><div class="postTitle"><a class="postTitle2 vertical-middle" href="#"><span>VOCALOID総合ライブラリダウンロードサイト (V2, V3, V4, V5, V6対応)</span></a></div><div class="postCon"><div class="c_b_p_desc">概要：このサイトでは、VOCALOIDの各バージョンの音声ライブラリを簡単にダウンロードできます。 #1 エディタダウンロード...</div></div><div class="clear"></div><div class="postDesc">投稿日時: 2023-12-30 22:50 by SYSKUKU-自傷無色。<span>閲覧(19684)</span> <span>コメント(6)</span> <span>推薦(0)</span></div><div class="clear"></div></div>
+                    <div class="day"><div class="dayTitle"><a>2023年8月27日</a></div><div class="postTitle"><a class="postTitle2 vertical-middle" href="#"><span>【V4配布】VOCALOID 4.5.2 V4 Plus Alphaエディタ (V5ライブラリ対応)</span></a></div><div class="postCon"><div class="c_b_p_desc">概要： <img src="https://img2023.cnblogs.com/blog/3264725/202308/3264725-20230827145811990-1793599227.png" alt="" style="margin-right: 10px; max-width: 100px;" /> V5ライブラリをサポートするVocaloid 4！... <a href="#" class="c_b_p_desc_readmore">続きを読む</a></div></div><div class="clear"></div><div class="postDesc">投稿日時: 2023-08-27 14:58 by SYSKUKU-自傷無色。<span>閲覧(1501)</span> <span>コメント(0)</span> <span>推薦(0)</span></div><div class="clear"></div></div>
+                    <div class="day"><div class="dayTitle"><a>2023年8月23日</a></div><div class="postTitle"><a class="postTitle2 vertical-middle" href="#"><span>新サイト「VOCAKEY」完成！Live2D、ダークモード対応</span></a></div><div class="postCon"><div class="c_b_p_desc">概要：VOCAKEY新サイトが完成しました。編集機能、ダークモード、管理画面、Live2Dなどに対応。新サイトのリンクはこちら...</div></div><div class="clear"></div><div class="postDesc">投稿日時: 2023-08-23 15:35 by SYSKUKU-自傷無色。<span>閲覧(7895)</span> <span>コメント(1)</span> <span>推薦(0)</span></div><div class="clear"></div></div>
                 </div>
             </div>
             <div id="sideBar">
@@ -137,9 +85,7 @@
                     <div id="sidebar_news" class="newsItem">
                         <h3 class="catListTitle">お知らせ</h3>
                         <div id="blog-news">
-                            <p>iMikufans Club Blogsへようこそ！</p>
-                            <p>ここではVOCALOID関連のリソースや技術情報を共有しています。</p>
-                            <p>未来へ響く、最初の音 🎵</p>
+                            <p>iMikufans Club Blogsへようこそ！</p><p>ここではVOCALOID関連のリソースや技術情報を共有しています。</p><p>未来へ響く、最初の音 🎵</p>
                         </div>
                     </div>
                 </div>
@@ -147,111 +93,75 @@
             <div class="clear"></div>
         </div>
         <div class="clear"></div>
-        <div id="footer">
-            <!-- フッター情報 -->
-            © 2024 Your Name or iMikufans Club Blogs
-        </div>
+        <div id="footer">© 2024 Your Name or iMikufans Club Blogs</div>
     </div>
 
     <!-- ページ下部のカスタムスクリプト -->
     <div id="page_end_html">
-        <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+        <!-- Icon Font and other libraries -->
         <script src="https://at.alicdn.com/t/font_1825850_klax1ao4o6.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/owo/dist/OwO.min.js"></script>
         
-        <!-- ローカルファイルへのパス -->
+        <!-- Background and Effects Scripts -->
         <script src="js/three.min.js"></script>
         <script src='js/star.js'></script>
-        <link rel="stylesheet" href="css/OwO.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/owo/dist/OwO.min.js"></script> <!-- CDNのままが安定 -->
+        <script src="js/mouse-click.js"></script>
+        
+        <!-- Core Customization Scripts -->
         <script src="js/cute-cnblogs2.js"></script>
         <script src="js/monitoring2.js"></script>
 
+        <!-- ★ 初期化スクリプトは最後に実行するのが安全 -->
         <script>
-            // カスタマイズの中心部分 (日本語化)
-            miluframe({
-                Youself: 'https://freelein.github.io/try/', // あなたのサイトURL
-                custom: [{
-                    name: 'ホーム',
-                    link: 'https://freelein.github.io/try/', // ホームへのリンク
-                    istarget: false
-                }, {
-                    name: 'スキルツリー',
-                    link: 'https://miluluyo.github.io/',
-                    istarget: true
-                }, {
-                    name: 'リンク集',
-                    link: '#', // 友達リンクページなど
-                    istarget: false
-                }],
-                details: [{
-                    field: 'name',
-                    literal: 'iMikufans',
-                }, {
-                    field: 'introduction',
-                    literal: '未来へ響く、最初の音',
-                }, {
-                    field: 'url',
-                    literal: 'https://freelein.github.io/try/', // あなたのサイトURL
-                }, {
-                    field: 'headurl',
-                    literal: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg', // あなたのアイコン画像
-                }],
-                logoimg: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg', // ブラウザタブのアイコン
-                cuteicon: ['icon-caomei', 'icon-boluo', 'icon-huolongguo', 'icon-chengzi', 'icon-hamigua'],
-                isGratuity: false,
-            });
-        </script>
-        
-        <!-- クリックエフェクト -->
-        <script src="js/mouse-click.js"></script>
+            // ★ jQueryの準備ができてから実行する
+            $(document).ready(function() {
+                // カスタマイズの中心部分
+                miluframe({
+                    Youself: 'https://freelein.github.io/try/',
+                    custom: [{ name: 'ホーム', link: 'https://freelein.github.io/try/', istarget: false }, { name: 'スキルツリー', link: 'https://miluluyo.github.io/', istarget: true }, { name: 'リンク集', link: '#', istarget: false }],
+                    details: [{ field: 'name', literal: 'iMikufans' }, { field: 'introduction', literal: '未来へ響く、最初の音' }, { field: 'url', literal: 'https://freelein.github.io/try/' }, { field: 'headurl', literal: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg' }],
+                    logoimg: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg',
+                    cuteicon: ['icon-caomei', 'icon-boluo', 'icon-huolongguo', 'icon-chengzi', 'icon-hamigua'],
+                    isGratuity: false,
+                });
 
-        <!-- 詩の表示 (日本語に変更) -->
-        <script>
-            $("#navigator").after('<div class="poem-wrap"><div class="poem-border poem-left"></div><div class="poem-border poem-right"></div><h1>今日の詩</h1><div id="poem_sentence"></div><div id="poem_info"></div></div>');
-        </script>
-        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        <script type="text/javascript">
-            jinrishici.load(function(result) {
-                var sentence = document.querySelector("#poem_sentence");
-                var info = document.querySelector("#poem_info");
-                sentence.innerHTML = result.data.content;
-                info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '「' + result.data.origin.title + '」';
+                // 詩の表示
+                $("#navigator").after('<div class="poem-wrap"><div class="poem-border poem-left"></div><div class="poem-border poem-right"></div><h1>今日の詩</h1><div id="poem_sentence"></div><div id="poem_info"></div></div>');
+                $.getScript("https://sdk.jinrishici.com/v2/browser/jinrishici.js", function() {
+                    jinrishici.load(function(result) {
+                        $("#poem_sentence").text(result.data.content);
+                        $("#poem_info").text('【' + result.data.origin.dynasty + '】' + result.data.origin.author + '「' + result.data.origin.title + '」');
+                    });
+                });
             });
         </script>
         
-        <!-- 音楽プレーヤー -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <!-- Music Player -->
         <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="2051260275" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0"></div>
         <script src="js/APlayer.min.js"></script>
         <script src="js/Meting.min.js"></script>
 
-        <!-- Live2D キャラクター -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css"/>
+        <!-- Live2D Character -->
         <script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js"
             onload='
                 let pio_container = document.createElement("div");
                 pio_container.classList.add("pio-container", "right");
-                pio_container.style.bottom = "-2rem";
-                pio_container.style.zIndex = "1";
+                pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1";
                 document.body.insertAdjacentElement("beforeend", pio_container);
                 let pio_action = document.createElement("div");
                 pio_action.classList.add("pio-action");
                 pio_container.insertAdjacentElement("beforeend", pio_action);
                 let pio_canvas = document.createElement("canvas");
-                pio_canvas.id = "pio";
-                pio_canvas.style.width = "14rem";
-                pio_canvas.width = "600";
-                pio_canvas.height = "800";
+                pio_canvas.id = "pio"; pio_canvas.style.width = "14rem";
+                pio_canvas.width = "600"; pio_canvas.height = "800";
                 pio_container.insertAdjacentElement("beforeend", pio_canvas);
                 let pio = new Paul_Pio({
-                    "mode": "fixed",
-                    "hidden": false,
-                    "content": {
-                        "link": ["https://freelein.github.io/try/"],
-                    },
+                    "mode": "fixed", "hidden": false,
+                    "content": { "link": ["https://freelein.github.io/try/"] },
                     "model": [
                         "https://cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json",
-                        "https://cdn.jsdelivr.net/gh/imuncle/live2d/model/tororo/tororo.model.json"
+                        "https://cdn.jsdelivr.net/gh/imuncle/live2d/model/tororo/tororo.model.json",
+                        "https://cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json"
                     ]
                 });
             '
