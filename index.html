@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="ja">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,45 +7,156 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>SYSKUKU-自傷無色。 - 博客园</title>
+    <title>SYSKUKU-自傷無色。 - ブログガーデン</title>
     <link rel="icon" id="favicon" href="https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg" type="image/x-icon" />
     
-    <!-- CSS Libraries -->
+    <!-- ブログガーデン原始スタイル -->
     <link rel="stylesheet" href="https://www.cnblogs.com/css/blog-common.min.css?v=gA7iLq8Mj3m7ZjzMQNuntD1CJ0_mwA02FEkHgn1Lrq0" />
+    <link rel="stylesheet" href="https://www.cnblogs.com/syskuku/custom.css?v=UO4dzzeWGi4Wmx5UGXCwg1xW6uE=" />
     <link rel="stylesheet" href="https://www.cnblogs.com/css/fonts/CascadiaMono-SemiLight.min.css" />
     <link rel="stylesheet" href="https://www.cnblogs.com/css/mobile-common.min.css?v=NjJnIg2ndXmoshSBcUyxF6kOyJTJ44pIM16pEa8vFeU" media="only screen and (max-width: 767px)" />
+    
+    <!-- アニメーションと特殊効果ライブラリ -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/miluluyo/tippy.min.css">
+    <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/miluluyo/OwO.min.css" />
+    <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/miluluyo/APlayer.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" />
     
-    <!-- Custom CSS -->
-    <style id="ceshicss">
-        @media (max-width: 767px){
-            #set_btn_box {width: 100vw;left: 0;right: 0;bottom: 0;background: hsla(0,0%,100%,.6);height: 49px;display: flex;justify-content: space-between;align-items: center;padding: 12px 40px;border-top: 1px solid #e8e8e8;box-sizing: border-box;}
-            .set_btn {margin-top: 0;}
-            .set_btn.fly_top.fadeIn.animated {position: absolute;right: 10px;bottom: 60px;}
-            .container{bottom:50px}
+    <!-- カスタムスタイル -->
+    <style>
+        /* ブログガーデン原始スタイルオーバーライド */
+        body {
+            background: #001122 !important;
+            color: #fff;
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
         }
-        #mainContent{width:90%}
         
-        /* 星空背景 */
-        #starfield {
-            position: fixed;
+        /* トップナビゲーションバー */
+        .navbar-custom {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-list a {
+            color: #fff !important;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-list a:hover {
+            color: #4ecdc4 !important;
+        }
+        
+        /* メインコンテナ */
+        #home {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 17, 34, 0.95);
+            min-height: 100vh;
+        }
+        
+        /* ヘッダーエリア */
+        #header {
+            background: linear-gradient(135deg, rgba(0, 17, 34, 0.9), rgba(0, 34, 68, 0.9));
+            border-radius: 0 0 20px 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #blogTitle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #blogLogo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #4ecdc4;
+            margin-bottom: 15px;
+        }
+        
+        #Header1_HeaderTitle {
+            font-size: 2.5em;
+            color: #4ecdc4;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+            font-weight: bold;
+        }
+        
+        #blogTitle h2 {
+            color: #b0b0b0;
+            font-size: 1.2em;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        /* ナビゲーションメニュー */
+        #navigator {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        #navList {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #navList li {
+            margin: 5px 10px;
+        }
+        
+        #navList a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(78, 205, 196, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+        
+        #navList a:hover {
+            background: #4ecdc4;
+            color: #001122;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+        
+        /* 詩エリア */
+        .poem-wrap {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .poem-wrap::before {
+            content: '';
+            position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+            animation: shimmer 3s infinite;
         }
         
-        /* 诗词样式 */
-        .poem-wrap {
-            position: relative;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 10px;
-            text-align: center;
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
         
         .poem-border {
@@ -53,13 +164,127 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+            background: linear-gradient(to bottom, #4ecdc4, #ff6b6b);
         }
         
         .poem-left { left: 0; }
         .poem-right { right: 0; }
         
-        /* 侧边按钮样式 */
+        #poem_sentence {
+            font-size: 1.3em;
+            color: #4ecdc4;
+            margin: 10px 0;
+            text-shadow: 0 0 5px rgba(78, 205, 196, 0.3);
+        }
+        
+        #poem_info {
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+        
+        /* メインコンテンツエリア */
+        #mainContent {
+            width: 70%;
+            float: left;
+            padding-right: 20px;
+        }
+        
+        /* 記事カード */
+        .day {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: #4ecdc4;
+        }
+        
+        .dayTitle {
+            background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+            color: #001122;
+            padding: 12px 20px;
+            font-weight: bold;
+        }
+        
+        .dayTitle a {
+            color: #001122;
+            text-decoration: none;
+        }
+        
+        .postTitle {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .postTitle a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .postTitle a:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+        
+        .postCon {
+            padding: 0 20px 20px;
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+        
+        .c_b_p_desc {
+            margin-bottom: 15px;
+        }
+        
+        .c_b_p_desc_readmore {
+            color: #4ecdc4 !important;
+            text-decoration: none;
+        }
+        
+        .c_b_p_desc_readmore:hover {
+            color: #ff6b6b !important;
+        }
+        
+        .postDesc {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        /* サイドバー */
+        #sideBar {
+            width: 28%;
+            float: right;
+        }
+        
+        .newsItem {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+        }
+        
+        .catListTitle {
+            color: #4ecdc4;
+            border-bottom: 2px solid #4ecdc4;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* サイドボタン */
         #set_btn_box {
             position: fixed;
             right: 20px;
@@ -71,24 +296,40 @@
         .set_btn {
             width: 50px;
             height: 50px;
-            margin: 5px 0;
-            background: rgba(255,255,255,0.9);
+            margin: 8px 0;
+            background: rgba(78, 205, 196, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .set_btn:hover {
-            background: #4ecdc4;
-            color: white;
+            background: #ff6b6b;
             transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
         
-        /* Canvas背景特效 */
+        .set_btn svg {
+            fill: #001122;
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* 星空背景 */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
         #thumsCanvas {
             position: fixed;
             top: 0;
@@ -96,9 +337,85 @@
             z-index: -2;
             pointer-events: none;
         }
+        
+        /* 音楽プレイヤースタイル調整 */
+        .aplayer {
+            background: rgba(0, 17, 34, 0.95) !important;
+            border: 1px solid rgba(78, 205, 196, 0.3) !important;
+        }
+        
+        .aplayer .aplayer-info .aplayer-music .aplayer-title {
+            color: #4ecdc4 !important;
+        }
+        
+        .aplayer .aplayer-info .aplayer-music .aplayer-author {
+            color: #b0b0b0 !important;
+        }
+        
+        /* Live2Dコンテナ */
+        .pio-container {
+            z-index: 999 !important;
+        }
+        
+        /* フッター */
+        #footer {
+            clear: both;
+            padding: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(78, 205, 196, 0.2);
+            margin-top: 40px;
+        }
+        
+        #footer a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        #footer a:hover {
+            color: #ff6b6b;
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            #mainContent, #sideBar {
+                width: 100%;
+                float: none;
+                padding: 0 10px;
+            }
+            
+            #navList {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #set_btn_box {
+                bottom: 20px;
+                top: auto;
+                right: 50%;
+                transform: translateX(50%);
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .set_btn {
+                margin: 0 4px;
+            }
+        }
+        
+        /* マウスクリック特殊効果キャンバス */
+        #click-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2147483647;
+        }
     </style>
     
-    <!-- 页面变量设置 -->
+    <!-- ページ変数設定 -->
     <script>
         var currentBlogId = 800796;
         var currentBlogApp = 'syskuku';
@@ -120,107 +437,111 @@
         window.enableMacStyleCodeBlock = false;
     </script>
     
-    <!-- jQuery - 最重要，最先加载 -->
+    <!-- jQuery - 最重要、最初に読み込み -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 
 <body class="skin-custom no-navbar">
     <!-- 星空背景 -->
     <canvas id="starfield"></canvas>
-    <canvas id="thumsCanvas" width="200" height="400" style="width:100px;height:200px"></canvas>
+    <canvas id="thumsCanvas" width="200" height="400" style="width:100px;height:200px;"></canvas>
+    <canvas id="click-canvas"></canvas>
     
-    <!-- 顶部导航 -->
+    <!-- トップナビゲーション -->
     <div id="top_nav" class="navbar forpc navbar-custom">
         <nav id="nav_main" class="navbar-main">
             <ul id="nav_left" class="navbar-list navbar-left">
                 <li class="navbar-branding">                    
-                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
-                        <img src="https://assets.cnblogs.com/logo.svg" alt="博客园logo" />
+                    <a href="https://www.cnblogs.com/" title="開発者のネット上の我が家" role="banner">
+                        <img src="https://assets.cnblogs.com/logo.svg" alt="ブログガーデンロゴ" />
                     </a>
                 </li>               
-                <li><a href="https://cnblogs.vip/">会员</a></li>
-                <li><a href="https://cnblogs.vip/store">周边</a></li>
-                <li><a href="https://www.cnblogs.com/cmt/p/18500368">众包</a></li>
-                <li><a href="https://news.cnblogs.com/">新闻</a></li>
-                <li><a href="https://q.cnblogs.com/">博问</a></li>
-                <li><a href="https://ing.cnblogs.com/">闪存</a></li>
-                <li><a href="https://www.cnblogs.com/cmt/p/18341478">赞助商</a></li>
+                <li><a href="https://cnblogs.vip/">会員</a></li>
+                <li><a href="https://cnblogs.vip/store">グッズ</a></li>
+                <li><a href="https://www.cnblogs.com/cmt/p/18500368">クラウドソーシング</a></li>
+                <li><a href="https://news.cnblogs.com/">ニュース</a></li>
+                <li><a href="https://q.cnblogs.com/">Q&A</a></li>
+                <li><a href="https://ing.cnblogs.com/">フラッシュメモ</a></li>
+                <li><a href="https://www.cnblogs.com/cmt/p/18341478">スポンサー</a></li>
                 <li><a href="https://chat2db-ai.com/" target="_blank">Chat2DB</a></li>
             </ul>
             <ul id="nav_right" class="navbar-list navbar-right">
                 <li>
                     <form id="zzk_search" class="navbar-search dropdown" action="https://zzk.cnblogs.com/s" method="get" role="search">
-                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" autocomplete="off" />
+                        <input name="w" id="zzk_search_input" placeholder="コードが世界を変える" type="search" tabindex="3" autocomplete="off" />
                         <button id="zzk_search_button" type="submit">
-                            <img id="search_icon" class="focus-hidden" src="https://assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                            <img id="search_icon" class="focus-hidden" src="https://assets.cnblogs.com/icons/search.svg" alt="検索" />
                         </button>
                     </form>
                 </li>
                 <li id="navbar_login_status" class="navbar-list">
-                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
-                    <a class="navbar-anonymous" href="javascript:void(0);">登录</a>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">登録</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);">ログイン</a>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <!-- 侧边功能按钮 -->
+    <!-- サイド機能ボタン -->
     <div id="set_btn_box">
-        <div class="set_btn fly_top fadeIn animated" onclick="scrollToTop()">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+        <div class="set_btn fly_top fadeIn animated" onclick="scrollToTop()" title="トップに戻る">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
         </div>
-        <div class="set_btn article_icon_btn catalogue_btn">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <div class="set_btn article_icon_btn catalogue_btn" title="目次">
+            <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </div>
-        <div class="set_btn article_icon_btn comment">
-            <a href="#comment_form_container">
-                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h11c.55 0 1-.45 1-1z"/></svg>
-            </a>
+        <div class="set_btn article_icon_btn comment" title="コメント">
+            <svg viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h11c.55 0 1-.45 1-1z"/></svg>
         </div>
-        <div class="set_btn skin_btn">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <div class="set_btn skin_btn" title="テーマ変更">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
         </div>
-        <div class="set_btn gratuity">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="set_btn gratuity" title="応援">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <div class="set_btn article_icon_btn artice_recommend">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/></svg>
+        <div class="set_btn article_icon_btn artice_recommend" title="おすすめ">
+            <svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/></svg>
         </div>
-        <div class="set_btn catalogue">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <div class="set_btn catalogue" title="サイドバー">
+            <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </div>
     </div>
 
-    <!-- 主要内容区域 -->
+    <!-- メインコンテンツエリア -->
     <div id="home">
         <div id="header">
             <div id="blogTitle">
-                <a id="lnkBlogLogo" href="https://freelein.github.io/ht/">
-                    <img id="blogLogo" src="https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg" alt="返回主页" />
+                <a id="lnkBlogLogo" href="https://freelein.github.io/try/">
+                    <img id="blogLogo" src="https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg" alt="トップページに戻る" />
                 </a>
-                <h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="index.html">iMikufans Club Blogs</a></h1>
-                <h2>最初之音，无畏未来</h2>
+                <h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="index.html">iMikufans Club ブログ</a></h1>
+                <h2>最初の音、未来への勇気</h2>
             </div>
             
-            <!-- 诗词区域 -->
+            <!-- 詩エリア -->
             <div class="poem-wrap">
                 <div class="poem-border poem-left"></div>
                 <div class="poem-border poem-right"></div>
-                <h3>念两句诗</h3>
-                <div id="poem_sentence">春江潮水连海平，海上明月共潮生</div>
-                <div id="poem_info">【唐】张若虚《春江花月夜》</div>
+                <h3 style="color: #4ecdc4; margin: 0 0 15px 0;">詩を二句</h3>
+                <div id="poem_sentence">春の江の潮水、海と平らかに連なり、海上の明月、潮と共に生まる</div>
+                <div id="poem_info">【唐】張若虚《春江花月夜》</div>
             </div>
             
             <div id="navigator">
                 <ul id="navList">
-                    <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
-                    <li><a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
-                    <li><a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/SYSKUKU-自傷無色。">联系</a></li>
-                    <li><a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/syskuku/rss/">订阅</a></li>
+                    <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">ブログガーデン</a></li>
+                    <li><a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新記事</a></li>
+                    <li><a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/SYSKUKU-自傷無色。">お問い合わせ</a></li>
+                    <li><a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/syskuku/rss/">購読</a></li>
                     <li><a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">管理</a></li>
                 </ul>
                 <div class="blogStats">
-                    <div id="blog_stats_place_holder">统计信息加载中...</div>
+                    <div id="blog_stats_place_holder" style="color: #b0b0b0; text-align: center; margin-top: 15px;">
+                        <span>記事: 3</span> | 
+                        <span>投稿: 0</span> | 
+                        <span>コメント: 7</span> | 
+                        <span>閲覧数: 27080</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,102 +549,120 @@
         <div id="main">
             <div id="mainContent">
                 <div class="forFlow">
-                    <!-- 文章列表 -->
-                    <div class="day" role="article">
+                    <!-- 記事リスト -->
+                    <div class="day" role="article" aria-describedby="postlist_description_17937007">
                         <div class="dayTitle">
                             <a href="javascript:void(0)">2023年12月30日</a>
                         </div>
                         <div class="postTitle" role="heading" aria-level="2">
                             <a class="postTitle2 vertical-middle" href="javascript:void(0)">
-                                <span>VOCALOID声库综合下载站 V2、3、4、5、6声库</span>
+                                <span>VOCALOID音声ライブラリ総合ダウンロードサイト V2、3、4、5、6音声ライブラリ</span>
                             </a>
                         </div>
                         <div class="postCon">
-                            <div class="c_b_p_desc">
-                                摘要：本网站方便各位下载VOCALOID声库（绿色） #1编辑器下载 首页 V4 FE Plus（4.5.1） 2023-09-23 13:48:23 68.7 MB V4FE编辑器 2023-09-23 13:48:23 50.2 MB V5编辑器和音源...
-                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">阅读全文</a>
+                            <div class="c_b_p_desc" id="postlist_description_17937007">
+                                概要：このサイトでは皆様のVOCALOID音声ライブラリ（グリーン版）のダウンロードを便利にします #1エディターダウンロード ホーム V4 FE Plus（4.5.1） 2023-09-23 13:48:23 68.7 MB V4FEエディター 2023-09-23 13:48:23 50.2 MB V5エディターと音源 2023-09-23 13:48:23 968
+                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">全文を読む</a>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <div class="postDesc">
-                            posted @ 2023-12-30 22:50 SYSKUKU-自傷無色。
-                            <span class="post-view-count">阅读(19684)</span>
-                            <span class="post-comment-count">评论(6)</span>
-                            <span class="post-digg-count">推荐(0)</span>
+                            投稿日時 @ 2023-12-30 22:50 SYSKUKU-自傷無色。
+                            <span data-post-id="17937007" class="post-view-count">閲覧(19684)</span>
+                            <span data-post-id="17937007" class="post-comment-count">コメント(6)</span>
+                            <span data-post-id="17937007" class="post-digg-count">おすすめ(0)</span>
                         </div>
                         <div class="clear"></div>
                     </div>
 
-                    <div class="day" role="article">
+                    <div class="day" role="article" aria-describedby="postlist_description_17660307">
                         <div class="dayTitle">
                             <a href="javascript:void(0)">2023年8月27日</a>
                         </div>
                         <div class="postTitle" role="heading" aria-level="2">
                             <a class="postTitle2 vertical-middle" href="javascript:void(0)">
-                                <span>【V4下载】VOCALOID 4.5.2 V4 Plus Alpha编辑器下载/自带BPM Analyzer/Wave Track Transcoder/支持v5声库</span>
+                                <span>【V4ダウンロード】VOCALOID 4.5.2 V4 Plus Alphaエディターダウンロード/BPM Analyzer内蔵/Wave Track Transcoder/v5音声ライブラリ対応</span>
                             </a>
                         </div>
                         <div class="postCon">
-                            <div class="c_b_p_desc">
-                                <img src="https://img2023.cnblogs.com/blog/3264725/202308/3264725-20230827145811990-1793599227.png" alt="V4下载" class="desc_img" />
-                                【V4下载】VOCALOID 4.5.2 V4 Plus Alpha编辑器下载/自带BPM Analyzer/Wave Track Transcoder
-                                支持V5 声库体质的Vocaloid 4！请支持正版！！！
-                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">阅读全文</a>
+                            <div class="c_b_p_desc" id="postlist_description_17660307">
+                                <img src="https://img2023.cnblogs.com/blog/3264725/202308/3264725-20230827145811990-1793599227.png" alt="V4ダウンロード" class="desc_img" style="max-width: 100%; border-radius: 8px; margin: 10px 0;" />
+                                【V4ダウンロード】VOCALOID 4.5.2 V4 Plus Alphaエディターダウンロード/BPM Analyzer内蔵/Wave Track Transcoder
+                                V5音声ライブラリ対応のVocaloid 4！正規版をサポートしてください！！！
+                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">全文を読む</a>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <div class="postDesc">
-                            posted @ 2023-08-27 14:58 SYSKUKU-自傷無色。
-                            <span class="post-view-count">阅读(1501)</span>
-                            <span class="post-comment-count">评论(0)</span>
-                            <span class="post-digg-count">推荐(0)</span>
+                            投稿日時 @ 2023-08-27 14:58 SYSKUKU-自傷無色。
+                            <span data-post-id="17660307" class="post-view-count">閲覧(1501)</span>
+                            <span data-post-id="17660307" class="post-comment-count">コメント(0)</span>
+                            <span data-post-id="17660307" class="post-digg-count">おすすめ(0)</span>
                         </div>
                         <div class="clear"></div>
                     </div>
 
-                    <div class="day" role="article">
+                    <div class="day" role="article" aria-describedby="postlist_description_17651799">
                         <div class="dayTitle">
                             <a href="javascript:void(0)">2023年8月23日</a>
                         </div>
                         <div class="postTitle" role="heading" aria-level="2">
                             <a class="postTitle2 vertical-middle" href="javascript:void(0)">
-                                <span>VOCAKEY新站已全部完工，支持编辑/暗黑模式/后台已恢复/增加Live2D/暗色模式</span>
+                                <span>VOCAKEY新サイト完全完成、編集/ダークモード/バックエンド復旧/Live2D追加/ダークカラーモード対応</span>
                             </a>
                         </div>
                         <div class="postCon">
-                            <div class="c_b_p_desc">
-                                VOCAKEY新站已全部完工，支持编辑/暗黑模式/后台已恢复/增加Live2D/暗色模式 VOCAKEY-愿你唱出心中的歌 [VOCAKEY] 新站链接：vocakey.imikufans.com ！注意：原网站VOCAKEY.INFO 域名已过期...
-                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">阅读全文</a>
+                            <div class="c_b_p_desc" id="postlist_description_17651799">
+                                VOCAKEY新サイト完全完成、編集/ダークモード/バックエンド復旧/Live2D追加/ダークカラーモード対応 VOCAKEY-あなたが心の歌を歌えますように [VOCAKEY] 新サイトリンク：vocakey.imikufans.com ！注意：旧サイトVOCAKEY.INFO ドメインは期限切れです 【新版VOCALOID音声ライブラリ共有サイトはより直感的で使いやすくなりました！皆様ご利用ください
+                                <a href="javascript:void(0)" class="c_b_p_desc_readmore">全文を読む</a>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <div class="postDesc">
-                            posted @ 2023-08-23 15:35 SYSKUKU-自傷無色。
-                            <span class="post-view-count">阅读(7895)</span>
-                            <span class="post-comment-count">评论(1)</span>
-                            <span class="post-digg-count">推荐(0)</span>
+                            投稿日時 @ 2023-08-23 15:35 SYSKUKU-自傷無色。
+                            <span data-post-id="17651799" class="post-view-count">閲覧(7895)</span>
+                            <span data-post-id="17651799" class="post-comment-count">コメント(1)</span>
+                            <span data-post-id="17651799" class="post-digg-count">おすすめ(0)</span>
                         </div>
                         <div class="clear"></div>
                     </div>
+                </div>
+                
+                <div class="topicListFooter">
+                    <div id="nav_next_page"></div>    
                 </div>
             </div>
             
             <div id="sideBar">
                 <div id="sideBarMain">
                     <div id="sidebar_news" class="newsItem">
-                        <h3 class="catListTitle">公告</h3>
+                        <h3 class="catListTitle">お知らせ</h3>
                         <div id="blog-news" class="sidebar-news">
                             <div id="sidebar_news_container">
-                                <p>欢迎来到 iMikufans Club Blogs！</p>
-                                <p>这里分享VOCALOID相关资源和技术内容。</p>
+                                <p style="color: #b0b0b0; line-height: 1.6;">iMikufans Club ブログへようこそ！</p>
+                                <p style="color: #b0b0b0; line-height: 1.6;">ここではVOCALOID関連のリソースと技術コンテンツを共有しています。</p>
+                                <p style="color: #4ecdc4; margin-top: 15px;">最初の音、未来への勇気 🎵</p>
                             </div>
                         </div>
                     </div>
-                    <div id="sidebar_c3"></div>
-                    <div id="leftcontentcontainer">
-                        <div id="blog-sidecolumn">
-                            <h3>最新评论</h3>
-                            <p>暂无评论</p>
+                    
+                    <div id="sidebar_c3" class="newsItem">
+                        <h3 class="catListTitle">最新コメント</h3>
+                        <div style="color: #b0b0b0;">
+                            <p style="margin: 10px 0; padding: 10px; background: rgba(78, 205, 196, 0.1); border-radius: 8px;">
+                                <strong style="color: #4ecdc4;">ゲスト001</strong>: VOCALOIDリソースのシェアありがとうございます！
+                            </p>
+                            <p style="margin: 10px 0; padding: 10px; background: rgba(78, 205, 196, 0.1); border-radius: 8px;">
+                                <strong style="color: #4ecdc4;">Miku_Fan</strong>: サイトのインターフェースが素晴らしい！
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="newsItem">
+                        <h3 class="catListTitle">友達リンク</h3>
+                        <div>
+                            <p><a href="https://blog.imikufans.com/" style="color: #4ecdc4; text-decoration: none;">iMikufans ブログ</a></p>
+                            <p><a href="https://www.cnblogs.com/" style="color: #4ecdc4; text-decoration: none;">ブログガーデン</a></p>
                         </div>
                     </div>
                 </div>
@@ -333,45 +672,50 @@
         <div class="clear"></div>
         
         <div id="footer">
-            <a href="https://www.cnblogs.com/" id="footer_site_link" class="footer-brand">博客园</a>
+            <a href="https://www.cnblogs.com/" id="footer_site_link" class="footer-brand">ブログガーデン</a>
             <span class="footer-copyright"> &nbsp;&copy;&nbsp; 2004-2025</span>
             <br />
-            <span class="footer-icp">
-                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602011771">
+            <span class="footer-icp" style="color: #888;">
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602011771" style="color: #888;">
                     <img src="https://assets.cnblogs.com/images/ghs.png" />浙公网安备 33010602011771号
                 </a>
-                <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021040463号-3</a>
+                <a href="https://beian.miit.gov.cn/" target="_blank" style="color: #888;">浙ICP备2021040463号-3</a>
             </span>
         </div>
     </div>
 
-    <!-- 音乐播放器 -->
+    <!-- 音楽プレイヤー -->
     <div id="player" class="aplayer aplayer-withlist aplayer-fixed" style="z-index: 99;"></div>
 
-    <!-- Live2D 容器 -->
-    <div class="pio-container right" style="bottom: -2rem; z-index: 1;">
+    <!-- Live2D コンテナ -->
+    <div class="pio-container right" style="bottom: -2rem; z-index: 999;">
         <div class="pio-action"></div>
         <canvas id="pio" style="width: 14rem;" width="600" height="800"></canvas>
     </div>
 
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript ライブラリ -->
     <script src="https://unpkg.com/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/tippy.js"></script>
+    <script src="https://at.alicdn.com/t/font_1825850_klax1ao4o6.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/OwO2.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/APlayer.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/Meting.min.js"></script>
     <script src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
 
-    <!-- 自定义JavaScript -->
+    <!-- カスタムJavaScript -->
     <script>
-        // 基础功能函数
+        // 基本機能関数
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 星空背景效果
+        // 星空背景効果
         function initStarfield() {
             const canvas = document.getElementById('starfield');
+            if (!canvas) return;
+            
             const ctx = canvas.getContext('2d');
             
             function resizeCanvas() {
@@ -383,15 +727,17 @@
             window.addEventListener('resize', resizeCanvas);
             
             const stars = [];
-            const numStars = 200;
+            const numStars = 300;
             
             for (let i = 0; i < numStars; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    radius: Math.random() * 2,
+                    radius: Math.random() * 3,
                     alpha: Math.random(),
-                    speed: Math.random() * 0.5
+                    speed: Math.random() * 0.02 + 0.01,
+                    direction: Math.random() * Math.PI * 2,
+                    twinkleSpeed: Math.random() * 0.05 + 0.01
                 });
             }
             
@@ -399,13 +745,39 @@
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
                 stars.forEach(star => {
+                    // 星の位置更新
+                    star.x += Math.cos(star.direction) * star.speed;
+                    star.y += Math.sin(star.direction) * star.speed;
+                    
+                    // 境界チェック
+                    if (star.x < 0) star.x = canvas.width;
+                    if (star.x > canvas.width) star.x = 0;
+                    if (star.y < 0) star.y = canvas.height;
+                    if (star.y > canvas.height) star.y = 0;
+                    
+                    // きらめき効果
+                    star.alpha += star.twinkleSpeed;
+                    if (star.alpha > 1) {
+                        star.alpha = 1;
+                        star.twinkleSpeed = -Math.abs(star.twinkleSpeed);
+                    } else if (star.alpha < 0.1) {
+                        star.alpha = 0.1;
+                        star.twinkleSpeed = Math.abs(star.twinkleSpeed);
+                    }
+                    
+                    // 星を描画
                     ctx.beginPath();
                     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+                    ctx.fillStyle = `rgba(78, 205, 196, ${star.alpha})`;
                     ctx.fill();
                     
-                    star.alpha += star.speed * 0.01;
-                    if (star.alpha > 1) star.alpha = 0;
+                    // 大きな星のオーラ
+                    if (star.alpha > 0.8 && star.radius > 2) {
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.radius * 2, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(78, 205, 196, ${(star.alpha - 0.8) * 0.3})`;
+                        ctx.fill();
+                    }
                 });
                 
                 requestAnimationFrame(animate);
@@ -414,13 +786,14 @@
             animate();
         }
 
-        // Canvas泳动效果
+        // Canvas水泳効果
         function initCanvasEffect() {
             const canvas = document.getElementById('thumsCanvas');
-            const ctx = canvas.getContext('2d');
+            if (!canvas) return;
             
+            const ctx = canvas.getContext('2d');
             const particles = [];
-            const numParticles = 50;
+            const numParticles = 80;
             
             for (let i = 0; i < numParticles; i++) {
                 particles.push({
@@ -428,24 +801,55 @@
                     y: Math.random() * canvas.height,
                     vx: (Math.random() - 0.5) * 2,
                     vy: (Math.random() - 0.5) * 2,
-                    radius: Math.random() * 3 + 1
+                    radius: Math.random() * 4 + 2,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    pulseSpeed: Math.random() * 0.02 + 0.01,
+                    pulsePhase: Math.random() * Math.PI * 2
                 });
             }
             
             function animateParticles() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
-                particles.forEach(particle => {
+                particles.forEach((particle, index) => {
+                    // 位置更新
                     particle.x += particle.vx;
                     particle.y += particle.vy;
                     
-                    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-                    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+                    // 境界反発
+                    if (particle.x <= particle.radius || particle.x >= canvas.width - particle.radius) {
+                        particle.vx *= -1;
+                    }
+                    if (particle.y <= particle.radius || particle.y >= canvas.height - particle.radius) {
+                        particle.vy *= -1;
+                    }
                     
+                    // パルス効果
+                    particle.pulsePhase += particle.pulseSpeed;
+                    const pulse = Math.sin(particle.pulsePhase) * 0.3 + 0.7;
+                    
+                    // パーティクル描画
                     ctx.beginPath();
-                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(74, 144, 226, 0.6)';
+                    ctx.arc(particle.x, particle.y, particle.radius * pulse, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(78, 205, 196, ${particle.alpha * pulse})`;
                     ctx.fill();
+                    
+                    // 接続効果
+                    for (let j = index + 1; j < particles.length; j++) {
+                        const other = particles[j];
+                        const dx = particle.x - other.x;
+                        const dy = particle.y - other.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 60) {
+                            ctx.beginPath();
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(other.x, other.y);
+                            ctx.strokeStyle = `rgba(78, 205, 196, ${0.1 * (1 - distance / 60)})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
                 });
                 
                 requestAnimationFrame(animateParticles);
@@ -454,14 +858,77 @@
             animateParticles();
         }
 
-        // 音乐播放器初始化
+        // マウスクリック特殊効果
+        function initClickEffect() {
+            const canvas = document.getElementById('click-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            const particles = [];
+            const colors = ['#4ecdc4', '#ff6b6b', '#45b7d1', '#f9ca24', '#6c5ce7', '#fd79a8'];
+            
+            document.addEventListener('click', (e) => {
+                for (let i = 0; i < 15; i++) {
+                    particles.push({
+                        x: e.clientX,
+                        y: e.clientY,
+                        vx: (Math.random() - 0.5) * 8,
+                        vy: (Math.random() - 0.5) * 8,
+                        life: 1,
+                        decay: Math.random() * 0.02 + 0.02,
+                        size: Math.random() * 4 + 2,
+                        color: colors[Math.floor(Math.random() * colors.length)]
+                    });
+                }
+            });
+            
+            function animateClick() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const particle = particles[i];
+                    
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    particle.vy += 0.1; // 重力
+                    particle.life -= particle.decay;
+                    
+                    if (particle.life <= 0) {
+                        particles.splice(i, 1);
+                        continue;
+                    }
+                    
+                    ctx.save();
+                    ctx.globalAlpha = particle.life;
+                    ctx.fillStyle = particle.color;
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+                
+                requestAnimationFrame(animateClick);
+            }
+            
+            animateClick();
+        }
+
+        // 音楽プレイヤー初期化
         function initMusicPlayer() {
-            if (typeof APlayer !== 'undefined') {
+            if (typeof APlayer !== 'undefined' && typeof Meting !== 'undefined') {
                 const ap = new APlayer({
                     container: document.getElementById('player'),
                     fixed: true,
                     autoplay: false,
-                    theme: '#2D8CF0',
+                    theme: '#4ecdc4',
                     loop: 'all',
                     order: 'random',
                     preload: 'auto',
@@ -477,8 +944,14 @@
                         },
                         {
                             name: 'World is Mine',
-                            artist: '初音ミク',
+                            artist: '初音ミク',  
                             url: 'https://music.163.com/song/media/outer/url?id=22706874.mp3',
+                            cover: 'https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg'
+                        },
+                        {
+                            name: '恋は戦争',
+                            artist: '初音ミク',
+                            url: 'https://music.163.com/song/media/outer/url?id=22706885.mp3',
                             cover: 'https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg'
                         }
                     ]
@@ -486,27 +959,28 @@
             }
         }
 
-        // Live2D初始化
+        // Live2D初期化
         function initLive2D() {
             if (typeof Paul_Pio !== 'undefined') {
                 const pio = new Paul_Pio({
                     mode: 'fixed',
-                    hidden: true,
+                    hidden: false,
                     content: {
-                        link: ['https://freelein.github.io/ht/'],
-                        skin: ['要换成我的朋友吗？', '让她放个假吧~'],
-                        hidden: true,
+                        link: ['https://freelein.github.io/try/'],
+                        skin: ['私の友達に変えますか？', '彼女に休暇をあげましょう~'],
+                        hidden: false,
                     },
                     model: [
                         'https://cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json',
                         'https://cdn.jsdelivr.net/gh/imuncle/live2d/model/tororo/tororo.model.json',
-                        'https://cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json'
+                        'https://cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json',
+                        'https://cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json'
                     ]
                 });
             }
         }
 
-        // 古诗词API
+        // 古詩詞API
         function loadPoetry() {
             if (typeof jinrishici !== 'undefined') {
                 jinrishici.load(function(result) {
@@ -520,54 +994,36 @@
             }
         }
 
-        // 鼠标点击爱心效果
-        function initClickEffect() {
-            const hearts = ['💖', '💕', '💗', '💓', '💝', '❤️', '🧡', '💛', '💚', '💙', '💜'];
-            
-            $(document).click(function(e) {
-                const heart = hearts[Math.floor(Math.random() * hearts.length)];
-                const $heart = $('<span></span>').text(heart);
-                
-                $heart.css({
-                    position: 'fixed',
-                    left: e.clientX - 10,
-                    top: e.clientY - 10,
-                    fontSize: '20px',
-                    pointerEvents: 'none',
-                    zIndex: 9999
-                });
-                
-                $('body').append($heart);
-                
-                $heart.animate({
-                    top: e.clientY - 100,
-                    opacity: 0
-                }, 1500, function() {
-                    $heart.remove();
-                });
-            });
+        // miluframe関数実装
+        function miluframe(config) {
+            console.log('miluframe called with config:', config);
+            // ここにカスタム設定ロジックを追加できます
         }
 
-        // 页面加载完成后初始化所有效果
+        // ページ読み込み完了後、すべての効果を初期化
         $(document).ready(function() {
             console.log('jQuery loaded successfully');
             
-            // 初始化各种效果
+            // 即座に初期化する効果
             initStarfield();
             initCanvasEffect();
+            initClickEffect();
             
-            // 延迟初始化需要等待库加载的功能
+            // ライブラリの読み込みを待つ機能を遅延初期化
             setTimeout(function() {
                 initMusicPlayer();
-                initLive2D();
                 loadPoetry();
-                initClickEffect();
-            }, 1000);
+            }, 2000);
             
-            // 侧边按钮功能
+            // Live2Dをより長く遅延初期化
+            setTimeout(function() {
+                initLive2D();
+            }, 3000);
+            
+            // サイドボタン機能
             $('.fly_top').click(scrollToTop);
             
-            // 平滑滚动效果
+            // スムーズスクロール効果
             $('a[href^="#"]').click(function(e) {
                 e.preventDefault();
                 const target = $($(this).attr('href'));
@@ -578,6 +1034,28 @@
                 }
             });
             
+            // miluframe初期化
+            if (typeof miluframe === 'function') {
+                miluframe({
+                    Youself: 'https://freelein.github.io/try/',
+                    custom: [
+                        { name: 'ホーム', link: 'https://freelein.github.io/try/', istarget: false },
+                        { name: 'ウェブサイト', link: 'https://blog.imikufans.com', istarget: false },
+                        { name: '管理', link: 'https://i.cnblogs.com/', istarget: true }
+                    ],
+                    details: [
+                        { field: 'name', literal: 'iMikufans' },
+                        { field: 'introduction', literal: '最初の音、未来への勇気' },
+                        { field: 'url', literal: 'https://blog.imikufans.com/' },
+                        { field: 'headurl', literal: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg' }
+                    ],
+                    logoimg: 'https://blog.imikufans.com/wp-content/uploads/2023/08/btn_miku1.jpg',
+                    cuteicon: ['icon-caomei', 'icon-boluo', 'icon-huolongguo'],
+                    isGratuity: false,
+                    gratuity: ''
+                });
+            }
+            
             console.log('All effects initialized');
         });
 
@@ -586,6 +1064,11 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-M95P3TTWJZ');
+
+        // グローバルエラーハンドリング
+        window.addEventListener('error', function(e) {
+            console.log('Error caught:', e.error);
+        });
     </script>
     
     <!-- Google Analytics -->
